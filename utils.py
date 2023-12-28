@@ -1,4 +1,5 @@
 import wikipedia as wiki
+import pandas as pd
 
 def get_clean_page_name(page_name: str) -> str:
     """
@@ -22,7 +23,7 @@ def get_clean_page_name(page_name: str) -> str:
 
 
 
-def get_wikipedia_data(page_name: str) -> str:
+def get_wikipedia_data(page_name: str, articles: pd.DataFrame) -> str:
     """
     Get the original docuement (wikipedia page) for the given page name.
 
@@ -31,13 +32,23 @@ def get_wikipedia_data(page_name: str) -> str:
     Returns: 
         A string containing the wikipedia page data.
     """
+    
     try:
         page = get_clean_page_name(page_name=page_name)
-        print(">>> Getting data for: " + page + " (Original name: " + page_name + ")")
-        data = wiki.page(page).content
-        return data
-    except:
-        return ""
+
+        if page in articles.page.values:
+            #print(">>> Already got data for: " + page)
+            return articles[articles.page == page].data.values[0]
+        else:
+            #print(">>> Getting data for: " + page + " (Original name: " + page_name + ")")
+            data = wiki.page(page).content
+            #print('>>> TEST for data length: ' + str(len(data)) + ' characters')
+            #print('>>> Saving data for: ' + page)
+            articles.loc[len(articles)] = {'page': page, 'data': data}
+            return data
+    except Exception as e:
+        #print(e)
+        return "Error: Wiki page not found (get_wikipedia_data)"
 
 
 
@@ -56,7 +67,7 @@ def get_one_ETS(data: str, sentence_id: int) -> str:
 
 
 
-def get_all_ETS_and_document(evidence: list):
+def get_all_ETS_and_document(evidence: list, articles: pd.DataFrame):
     """
     Get the ETS and the document of the wikipedia page for the given evidence.
 
@@ -67,23 +78,24 @@ def get_all_ETS_and_document(evidence: list):
     """
     ets = ""; document = ""; first_title = ""
     
-    for e in evidence: # only first 2
-        print(">>> Starting process for: " + str(e[0]))
+    
+    for e in evidence[:2]: # only first 2 ETS
+        #print(">>> ================================")
+        #print(">>> Starting process for: " + str(e[0]))
         title= e[0][2]
         if title != first_title:
-            data = get_wikipedia_data(title)
+            data = get_wikipedia_data(title, articles)
 
             if len(data) == 0:
                 raise Exception(">>> Error: Wiki page not found.")
             
             document += data
-            print(">>> Getting ETS for: " + title)
-            ets += get_one_ETS(data, e[3])
-            
+            #print(">>> Getting ETS for: " + title + " , sentence id: " + str(e[0][3]))
+            ets += get_one_ETS(data, e[0][3]) #ISSUE
             first_title = title
         else:
-            print(">>> Already got data for: " + title)
-            print(">>> Getting ETS for: " + title)
-            ets += ". " + get_one_ETS(data, e[3])
+            #print(">>> Already got data for: " + title)
+            #print(">>> Getting ETS for: " + title)
+            ets += ". " + get_one_ETS(data, e[0][3])
 
     return ets, document
