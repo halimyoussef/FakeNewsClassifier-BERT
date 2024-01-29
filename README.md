@@ -53,7 +53,7 @@ Here are the results after predictions on unseen claims :
 | __**_Double_**__ | ___82.97%___ | ___77.00%___ | ___92.71%___ | ___91.74%___ |
 | **Double-Frozen** | 59.36% | 54.84% | 93.45% | 74.21% |
 
-Overall, all non-frozen models overfitted pretty quickly after only a few epochs. While the Double-Input also show signs of over-fiiting, it happened later than Claim-Only. It is also the most versatil between the three. 
+Overall, all non-frozen models overfitted pretty quickly after only a few epochs. While the Double-Input also show signs of over-fiiting, it happened later than Claim-Only. It is also the most versatile between the three. 
 
 We then trained another Double-Input model while freezing BERT's embeddings. This time the model did not show signs of overfitting at all but failed to have high enough precision and accuracy. Maybe with a higher number of epochs we could have seen these values increase however.
 
