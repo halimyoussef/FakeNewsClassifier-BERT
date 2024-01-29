@@ -11,7 +11,7 @@ This GitHub repository was created as part of my Bachelor thesis project on Fake
 
 The models were built and trained on Google Colab Pro with the V100 GPU. There is no installation needed if the program is ran in Google Colab, only dowloading the datasets is required.
 
-# Dataset
+## Dataset
 
 To trained the models, I created one dataset using two corpuses :
 - UKPSnopes
@@ -28,7 +28,11 @@ Here is an example of one instance :
 
 While the UKPSnopes corpus comes with already fetched ETS created from the fact-cheking website _Snopes_, FEVER's ETS had to be fetched with the Wikipedia library on NAME FILE 
 
-# Methodology
+## Methodology
+
+Two python notebooks were created:
+-  NAME --> EDA, combination of FEVER and UKPSnopes, data preprocessing, data splitting
+-  NAME --> Comparison of model training and predictions
 
 Four models are built with "_bert-base uncased_" from the hugging face library and an added dense layer with a softmax activation function for classification, each is trained differently such as :
 
@@ -41,8 +45,7 @@ After each epoch (only 11 because of RAM limits), a model checkpoint saved the w
 
 Training and comparing these different models allows us to understand the inpact of training data when it comes to Fake News as well as I understand the impact of fine-tuning BERT's pre-trained embeddings. 
 
-
-# Results
+## Results
 
 Here are the results after predictions on unseen claims :
 
