@@ -24,7 +24,7 @@ Four models are built with "_bert-base uncased_" from the hugging face library a
 - Double-Input model
 - Double-Input model with frozen BERT parameters
 
-After each epoch (only 11 because of RAM limits), a model checkpoint saved the weights if the AUC increased.
+After each epoch (only 11 because of RAM limits), a model checkpoint saved the weights if the AUC increased. You can find all checkpoints saved [here](https://drive.google.com/drive/folders/11scdTdI5Vme8fnp4Lvt3rdROt4I4bquK?usp=sharing)
 
 Training and comparing these different models allows us to understand the inpact of training data when it comes to Fake News as well as I understand the impact of fine-tuning BERT's pre-trained embeddings. 
 
@@ -43,6 +43,7 @@ Here is an example of one instance :
 
 While the UKPSnopes corpus comes with already fetched ETS created from the fact-cheking website _Snopes_, FEVER's ETS had to be fetched with the Wikipedia library on [ets_extraction.ipynb](https://github.com/halimyoussef/FakeNewsClassifier-BERT/blob/main/ets/ets_extraction.ipynb)
 
+All corpus used can be found [this drive file](https://drive.google.com/drive/folders/1DGAMVbafSTY_-T093FNwbnQvS82zyRrt?usp=drive_link)
 ## Results
 
 Here are the results after predictions on unseen claims :
@@ -57,6 +58,8 @@ Here are the results after predictions on unseen claims :
 Overall, all non-frozen models overfitted pretty quickly after only a few epochs. While the Double-Input also show signs of over-fiiting, it happened later than Claim-Only. It is also the most versatile between the three. 
 
 We then trained another Double-Input model while freezing BERT's embeddings. This time the model did not show signs of overfitting at all but failed to have high enough precision and accuracy. Maybe with a higher number of epochs we could have seen these values increase however.
+
+All best final weights for each model were saved [here](https://drive.google.com/drive/folders/1-5QSSbOdAhdd5UMCenqYjcC9qV50pwiE?usp=sharing)
 
 ## Conclusion
 
