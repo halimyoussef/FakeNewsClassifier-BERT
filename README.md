@@ -14,7 +14,7 @@ The models were built and trained on Google Colab Pro with the V100 GPU. There i
 ## Methodology
 
 Two python notebooks were created:
--  [data_exploration_processing.ipynb](https://github.com/halimyoussef/FakeNewsClassifier-BERT/blob/main/Data_Exploration_Processing.ipynb) --> EDA, combination of FEVER and UKPSnopes, data preprocessing, data splitting
+-  [data_exploration_processing.ipynb](https://github.com/halimyoussef/FakeNewsClassifier-BERT) --> EDA, combination of FEVER and UKPSnopes, data preprocessing, data splitting
 -  NAME --> Comparison of model training and predictions
 
 Four models are built with "_bert-base uncased_" from the hugging face library and an added dense layer with a softmax activation function for classification, each is trained differently such as :
