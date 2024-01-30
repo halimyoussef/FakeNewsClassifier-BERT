@@ -9,7 +9,7 @@ This GitHub repository was created as part of my Bachelor thesis project on Fake
 
 ## Requirements
 
-The models were built and trained on Google Colab Pro with the V100 GPU. There is no installation needed if the program is ran in Google Colab, only dowloading the datasets is required.
+The models were built and trained on Google Colab Pro with the V100 GPU. There is no installation needed if the program is ran in Google Colab, only downloading the datasets and changing the file paths is required.
 
 ## Methodology
 
