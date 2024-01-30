@@ -14,8 +14,8 @@ The models were built and trained on Google Colab Pro with the V100 GPU. There i
 ## Methodology
 
 Two python notebooks were created:
--  [data_exploration_processing.ipynb](https://github.com/halimyoussef/FakeNewsClassifier-BERT) --> EDA, combination of FEVER and UKPSnopes, data preprocessing, data splitting
--  NAME --> Comparison of model training and predictions
+-  [data_exploration_processing.ipynb](https://github.com/halimyoussef/FakeNewsClassifier-BERT/blob/main/data_exploration_processing.ipynb) --> EDA, combination of FEVER and UKPSnopes, data preprocessing, data splitting
+-  [model_training_evaluation.ipynb](https://github.com/halimyoussef/FakeNewsClassifier-BERT/blob/main/model_training_evaluation.ipynb) --> Comparison of model training and predictions
 
 Four models are built with "_bert-base uncased_" from the hugging face library and an added dense layer with a softmax activation function for classification, each is trained differently such as :
 
@@ -41,7 +41,7 @@ Here is an example of one instance :
 | TRUE | gianluigi buffon won an award for goalkeeping. | 1 | he was the first ever goalkeeper to win the golden foot award, and was also named the iffhs world's best goalkeeper a record five times, alongside iker casillas and manuel neuer |
 |FALSE|narendra modi is not a member of the bharatiya janata party.|0| he is a member of the bharatiya janata party (bjp) and of the rashtriya swayamsevak sangh (rss), a right wing hindu nationalist paramilitary volunteer organisation|
 
-While the UKPSnopes corpus comes with already fetched ETS created from the fact-cheking website _Snopes_, FEVER's ETS had to be fetched with the Wikipedia library on NAME FILE 
+While the UKPSnopes corpus comes with already fetched ETS created from the fact-cheking website _Snopes_, FEVER's ETS had to be fetched with the Wikipedia library on [ets_extraction.ipynb](https://github.com/halimyoussef/FakeNewsClassifier-BERT/blob/main/ets/ets_extraction.ipynb)
 
 ## Results
 
