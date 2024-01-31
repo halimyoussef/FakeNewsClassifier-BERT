@@ -5,7 +5,7 @@ This GitHub repository was created as part of my Bachelor thesis project on Fake
 
 ## Original Paper
 
-[Battling misinformation: A data-driven approach introducing the BERT model](https://linktodocumentation)
+[Battling misinformation: A data-driven approach introducing the BERT model](https://drive.google.com/file/d/1meucJGACI9_yQWcxG7lFypSNX_rpWN5t/view?usp=sharing)
 
 ## Requirements
 
