@@ -3,10 +3,11 @@
 
 This GitHub repository was created as part of my Bachelor thesis project on Fake News Detection using BERT (Bidirectional Encoder Representations from Transformers). This thesis has a dual mission: to explore the landscape of fake news and to create a deep-dive explanation of the BERT model for anyone starting in NLP.  
 
-## Original Paper
+## Original Paper & Google Drive Repertory
 
-[Battling misinformation: A data-driven approach introducing the BERT model](https://drive.google.com/file/d/1meucJGACI9_yQWcxG7lFypSNX_rpWN5t/view?usp=sharing)
+Final report: [Battling misinformation: A data-driven approach introducing the BERT model](https://drive.google.com/file/d/1meucJGACI9_yQWcxG7lFypSNX_rpWN5t/view?usp=sharing)
 
+[Drive Repertory](https://drive.google.com/drive/folders/1ljV6l_5IeLnMDDxp8Tpqx1cazuLT3UFt?usp=sharing)
 ## Requirements
 
 The models were built and trained on Google Colab Pro with the V100 GPU. There is no installation needed if the program is ran in Google Colab, only downloading the datasets and changing the file paths, if needed, is required.
